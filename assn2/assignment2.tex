@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{fullpage}
+\newtheorem{theorem}{Theorem}
+\renewenvironment{proof}{{\noindent\bfseries Proof}}
+
+\begin{document}
+
+\noindent\textbf{The Lorentz Condition:}
+
+\begin{equation}
+\label{equation1}
+\frac{1}{c}  \frac{\partial{\phi}}{\partial{t}}+\mbox{div}(A) = 0.
+\end{equation}
+
+\noindent we shall see, by using what are know as gauge transformations, we can always select potentials for the electromagnetic field that satisfy this condition.  The nice part about having the potentials satisfy the Lorentz Condition is that the PDE's(1)-(2)decouple into a pair of wave equations
+
+
+\begin{align}
+\frac{\partial{^2\phi}}{\partial{t^2}}-c^2\nabla^2{\phi} &=4{\pi}c^2{\rho}, \nonumber\\
+\frac{\partial{^2A}}{\partial{t^2}}-c^2\nabla^2{A} &=4{\pi}cJ. \nonumber
+\end{align}
+
+
+\begin{theorem}
+(Lorentz Potential Equations) On a simply connected spatial region, the vector fields $E$, $B$ are solutions to Maxwell's Equations if and only if
+
+
+\begin{align}
+\label{eqn2}
+E&=-\nabla\phi - \frac{1}{c}\frac{\partial{A}}{\partial{t}},\\
+\label{eqn3}
+B&=\emph{curl}(A),
+\end{align}
+
+
+\noindent for some scalar field $\phi$ and vector field A that satisfy the Lorentz potential equations
+
+\begin{align}
+\frac{1}{c}  \frac{\partial{\phi}}{\partial{t}}+\emph{div}(A) &= 0,\\
+\frac{\partial{^2\phi}}{\partial{t^2}}-c^2\nabla^2{\phi}&=4{\pi}c^2{\rho}\\
+\frac{\partial{^2A}}{\partial{t^2}}-c^2\nabla^2{A}&=4{\pi}cJ.
+\end{align}
+
+\end{theorem}
+
+\vspace{10pt}
+
+\begin{proof}
+\,Suppose first that $E$, $B$ is a solution of Maxwell's equations.  We repeat some of the above arguments because we have to change the notation slightly.  You will see why shortly.  Thus, since div$(B)=0$, there exists a vector field $A_0$ such that curl$(A_0)=B$.  Substituting this expression for $B$ into Faraday's laws gives curl$(\partial{A_0}/\partial{t}+E)=0$.  Thus there exists a scalar field ${\phi}_0$ such that $-\nabla{\phi}_0=\partial{A_0}/\partial{t}+E$.  Rearranging this gives $E=-\nabla{\phi}_0-\partial{A_0}/\partial{t}$.  Thus $E$ and $B$ are given by potentials ${\phi}_0$ and $A_0$ in the form of equations (\ref{eqn2})-(\ref{eqn3}).
+
+\end{proof}
+
+\end{document}
+ 
