@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fullpage}
+\title{Assignment 4}
+\author{Daniel Malone Buoy}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item Decimal to Binary and Hexadecimal
+\begin{enumerate}
+\item $16$
+\begin{enumerate}
+\item Binary\\
+$16 = 0*2^{7} + 0*2^{6} + 0*2^{5} + 1*2^{4} + 0*2^{3} + 0*2^{2} + 0*2^{1} + 0*2^{0}$\\
+$16 \rightarrow 00010000$
+\item Hexadecimal\\
+$16 = 0*16^{7} + 0*16^{6} + 0*16^{5} + 0*16^{4} + 0*16^{3} + 0*16^{2} + 1*16^{1} + 0*16^{0}$\\
+$16 \rightarrow 10$
+\end{enumerate}
+\item $170$
+\begin{enumerate}
+\item Binary\\
+$170 = 1*2^{7} + 0*2^{6} + 1*2^{5} + 0*2^{4} + 1*2^{3} + 0*2^{2} + 1*2^{1} + 0*2^{0}$\\
+$170 \rightarrow 10101010$
+\item Hexadecimal\\
+$170 = 0*16^{7} + 0*16^{6} + 0*16^{5} + 0*16^{4} + 0*16^{3} + 0*16^{2} + 10*16^{1} + 10*16^{0}$\\
+$170 \rightarrow AA$
+\end{enumerate}
+\item $197$
+\begin{enumerate}
+\item Binary\\
+$197 = 1*2^{7} + 1*2^{6} + 0*2^{5} + 0*2^{4} + 0*2^{3} + 1*2^{2} + 0*2^{1} + 1*2^{0}$\\
+$197 \rightarrow 11000101$
+\item Hexadecimal\\
+$197 = 0*16^{7} + 0*16^{6} + 0*16^{5} + 0*16^{4} + 0*16^{3} + 0*16^{2} + 12*16^{1} + 5*16^{0}$\\
+$197 \rightarrow C5$
+\end{enumerate}
+\item $255$
+\begin{enumerate}
+\item Binary\\
+$255 = 1*2^{7} + 1*2^{6} + 1*2^{5} + 1*2^{4} + 1*2^{3} + 1*2^{2} + 1*2^{1} + 1*2^{0}$\\
+$255 \rightarrow 11111111$
+\item Hexadecimal\\
+$255 = 0*16^{7} + 0*16^{6} + 0*16^{5} + 0*16^{4} + 0*16^{3} + 0*16^{2} + 15*16^{1} + 15*16^{0}$\\
+$255 \rightarrow FF$
+\end{enumerate}
+\end{enumerate}
+\item To store a number with the following constraints, there must be 15bits
+\begin{itemize}
+\item The whole portion of the numbers must be able to store a maximum value of 511.
+\item The fractional portion of the numbers (the part to the right of the decimal point) must have a precision of 1/128. 
+\end{itemize}
+For the first constraint, there needs to be 512 available numbers.  This is simply $2^9$. Therefore, the whole portion of the number must be 9bits.  For the second constraint, there needs to be 64 numbers available.  There is to say, it needs to be possible to represent $\frac{1}{2^{1}}$ to $\frac{1}{2^{7}}$.  Therefore, the fractional portion of the number must be 6bits.  Hence, the total bits needed to represent a number of these constraints is $9+6$=15
+\item If two fixed point numbers A and B are multiplied, where each of them contain N binary digits for the whole portion and M digits for the fractional portion, then the resulting number would need to have $2N + 2M$ bits.  The whole portion of A and B are: $A_{whole} = 2^{N}$ and $B_{whole} = 2^{N}$.  Then $A*B = 2^{N}*2^{N} = 2^{2N}$.  Therefore, for the whole portion of the product of A and B, there needs to be $2N$ bits.  A similar reasoning is used for the fractional portion.  The fractional portion of A and B are: $A_{frac} = \frac{1}{2^{M}}$ and $B_{frac} = \frac{1}{2^{M}}$.  Then $A*B = \frac{1}{2^{M}}*\frac{1}{2^{M}} = \frac{1}{2^{2M}}$.  Therefore, for the fractional portion of the product of A and B, there needs to be $2M$ bits.  Thus, the total bits needed to not loose any information during the multiplication process is $2N+2M = 2(N+M)$; twice as many bits as are in A or B.
+\item Two of the protocols used for a secure on-line  financial transaction would be NTP and SSH.  NTP stands for Network Time Protocol.  This protocol establishes the proper time signature for the transaction regardless of the geographical location of either Bob or Alice. SSH stands for Secure Shell.  This protocol uses the RSA algorithm to safely encrypt the information transmitted between Alice and Bob. \\
+To ensure that nobody can decode the messages they are sending back and forth, Alice and Bob use private keys (used in the RSA algorithm).  An RSA private key is the product of two very large prime numbers.  If either private key is revealed to a third party, then the security of the transaction is compromised.  However, the probability of decoding the private key, other than by an admittance from Alice or Bob, is incredibly low.     
+\end{enumerate}
+\end{document}
